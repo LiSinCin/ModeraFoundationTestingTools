@@ -1,0 +1,29 @@
+{
+    "name": "lisincin/modera-foundation-testing-tools",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex Plaksin",
+            "email": "alex.plaksin@modera.net",
+            "homepage": "http://modera.net/"
+        }
+    ],
+    "require": {
+        "modera/foundation-bundle": "~1.0|~2.0",
+        "doctrine/doctrine-bundle": "~1.2",
+        "doctrine/orm": "~2.2,>=2.2.3,<2.5",
+        "doctrine/dbal": "<2.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-4": { "Modera\\FoundationBundle\\": "./" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
