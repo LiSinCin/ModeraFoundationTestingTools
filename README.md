@@ -1,4 +1,4 @@
-# LiSinCin Modera Foundation Testing Tools [![Build Status](https://travis-ci.org/modera/ModeraFoundationBundle.svg?branch=master)](https://travis-ci.org/modera/ModeraFoundationBundle)
+# LiSinCin Modera Foundation Testing Tools [![Build Status](https://travis-ci.org/LiSinCin/ModeraFoundationTestingTools.svg?branch=master)](https://travis-ci.org/LiSinCin/ModeraFoundationTestingTools)
 
 Adding few testing tools to [Modera\FoundationBundle](https://github.com/modera/ModeraFoundationBundle).
 
