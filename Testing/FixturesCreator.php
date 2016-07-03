@@ -1,6 +1,7 @@
 <?php
 
 namespace Modera\FoundationBundle\Testing;
+use Symfony\Component\Debug\Exception\ContextErrorException;
 
 /**
  * Create fixture with all non relations field filled.
@@ -56,7 +57,9 @@ class FixturesCreator
 
         $resultClass = new $className();
         foreach ($propertyNames as $propertyName) {
-            $resultClass->{static::getSetterName($propertyName)}($propertyName.$index);
+            try {
+                $resultClass->{static::getSetterName($propertyName)}($propertyName . $index);
+            } catch (ContextErrorException $e) {}
         }
 
         return $resultClass;
