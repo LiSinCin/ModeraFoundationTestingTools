@@ -1,6 +1,6 @@
 # LiSinCin Modera Foundation Testing Tools [![Build Status](https://travis-ci.org/modera/ModeraFoundationBundle.svg?branch=master)](https://travis-ci.org/modera/ModeraFoundationBundle)
 
-Bundle ships some very basic utility classes
+Adding few testing tools to [Modera\FoundationBundle](https://github.com/modera/ModeraFoundationBundle).
 
 ## Installation
 
