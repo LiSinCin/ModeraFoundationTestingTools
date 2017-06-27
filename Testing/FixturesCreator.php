@@ -59,7 +59,7 @@ class FixturesCreator
         foreach ($propertyNames as $propertyName) {
             try {
                 $resultClass->{static::getSetterName($propertyName)}($propertyName . $index);
-            } catch (ContextErrorException $e) {}
+            } catch (\Exception $e) {}
         }
 
         return $resultClass;
