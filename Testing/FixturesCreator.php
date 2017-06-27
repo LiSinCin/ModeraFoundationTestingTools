@@ -24,7 +24,7 @@ class FixturesCreator
      *
      * @return mixed
      */
-    public static function createFixture($className, $index = 1)
+    public static function createFixture($className, $index = 1, $excludedFields = [])
     {
         if (!class_exists($className)) {
             throw new \InvalidArgumentException(sprintf('No such(%) class name ', $className));
@@ -57,6 +57,10 @@ class FixturesCreator
 
         $resultClass = new $className();
         foreach ($propertyNames as $propertyName) {
+
+            //skip excluded field set
+            if (array_search($propertyName, $excludedFields) !== FALSE ) continue;
+
             try {
                 $resultClass->{static::getSetterName($propertyName)}($propertyName . $index);
             } catch (\Exception $e) {}

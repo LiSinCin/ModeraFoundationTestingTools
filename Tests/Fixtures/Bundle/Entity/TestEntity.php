@@ -41,6 +41,13 @@ class TestEntity
      */
     private $relationProperty;
 
+    /**
+     * @ORM\Column(type='json_array' )
+     *
+     * @var array
+     */
+    private $ignoredProperty;
+
     /***
      * @var string
      */
@@ -80,4 +87,22 @@ class TestEntity
     {
         return $this->propertythree;
     }
+
+    /**
+     * @return array
+     */
+    public function getIgnoredProperty()
+    {
+        return $this->ignoredProperty;
+    }
+
+    /**
+     * @param array $ignoredProperty
+     */
+    public function setIgnoredProperty(array $ignoredProperty)
+    {
+        $this->ignoredProperty = $ignoredProperty;
+    }
+
+
 }

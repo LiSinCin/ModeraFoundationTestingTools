@@ -12,7 +12,7 @@ class FixturesCreatorTest extends \PHPUnit_Framework_TestCase
 {
     public function testFixturesCreator()
     {
-        $testEntity = FixturesCreator::createFixture('Modera\FoundationBundle\Tests\Fixtures\Bundle\Entity\TestEntity');
+        $testEntity = FixturesCreator::createFixture('Modera\FoundationBundle\Tests\Fixtures\Bundle\Entity\TestEntity', 1, ['ignoredProperty']);
 
         $this->assertEquals('propertyOne1', $testEntity->getPropertyOne());
         $this->assertNull($testEntity->getPropertyWithOutSetter());
