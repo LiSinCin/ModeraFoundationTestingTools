@@ -8,6 +8,7 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Tools\SchemaTool;
 use Symfony\Bundle\FrameworkBundle\Client;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Doctrine\Common\Util\Debug;
 
 /**
  * @author    Alex Plaksin <alex.plaksin@modera.net>
@@ -109,11 +110,12 @@ class FunctionalTestCase extends WebTestCase
             }
         }
 
-        static::$kernel = null;
-        static::$em = null;
+        static::ensureKernelShutdown();
+        static::$kernel    = null;
+        static::$em        = null;
         static::$container = null;
-        static::$client = null;
-
+        static::$client    = null;
+        
         static::postClear();
     }
 
@@ -356,5 +358,32 @@ class FunctionalTestCase extends WebTestCase
         static::$client->setServerParameters($server);
 
         return static::$client;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected static function createKernel(array $options = array())
+    {
+        global $_SERVER;
+        // "MONOLITH_TEST_SUITE" variable can be set by a script which initiates running tests to signal
+        // that this is a monolith repository, that is - the repository contains functional tests
+        // for different bundles and in scope of one test run there's a chance that many app kernel instances
+        // will be instantiated and as result we want to avoid in-memory caching (this is what original
+        // "createClient" method actually does). In-memory caching speeds up test run but at the same
+        // time might in case of monolithic repositories will lead to re-using of wrong app kernels
+        $isMonolithTestSuite = isset($_SERVER['MONOLITH_TEST_SUITE']) && $_SERVER['MONOLITH_TEST_SUITE'];
+        if ($isMonolithTestSuite) {
+            static::$class = static::getKernelClass();
+
+            return new static::$class(
+                isset($options['environment']) ? $options['environment'] : 'test',
+                isset($options['debug']) ? $options['debug'] : true
+            );
+
+        } else {
+            // letting to use runtime-caching
+            return parent::createKernel($options);
+        }
     }
 }
