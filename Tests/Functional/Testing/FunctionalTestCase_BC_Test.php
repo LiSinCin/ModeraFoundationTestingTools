@@ -1,6 +1,6 @@
 <?php
 
-namespace Modera\FoundationBundle\Tests\Functional\Testing;
+namespace LiSinCin\ModeraFoundationTestingTools\Tests\Functional\Testing;
 
 use Modera\FoundationBundle\Testing\FunctionalTestCase;
 

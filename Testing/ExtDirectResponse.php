@@ -1,6 +1,6 @@
 <?php
 
-namespace Modera\FoundationBundle\Testing;
+namespace LiSinCin\ModeraFoundationTestingTools\Testing;
 
 use Symfony\Component\HttpFoundation\Response;
 

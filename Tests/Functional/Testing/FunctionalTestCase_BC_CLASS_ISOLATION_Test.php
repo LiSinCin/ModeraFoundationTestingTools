@@ -1,8 +1,8 @@
 <?php
 
-namespace Modera\FoundationBundle\Tests\Functional\Testing;
+namespace LiSinCin\ModeraFoundationTestingTools\Tests\Functional\Testing;
 
-use Modera\FoundationBundle\Testing\FunctionalTestCase;
+use LiSinCin\ModeraFoundationTestingTools\Testing\FunctionalTestCase;
 
 /**
  * Here will be tested basic FunctionTestCase backward compatibility behavior.

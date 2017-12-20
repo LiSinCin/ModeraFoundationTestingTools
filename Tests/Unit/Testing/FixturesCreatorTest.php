@@ -1,6 +1,6 @@
 <?php
 
-namespace Modera\FoundationBundle\Tests\Unit\Testing;
+namespace LiSinCin\ModeraFoundationTestingTools\Tests\Unit\Testing;
 
 use Modera\FoundationBundle\Testing\FixturesCreator;
 
@@ -12,7 +12,7 @@ class FixturesCreatorTest extends \PHPUnit_Framework_TestCase
 {
     public function testFixturesCreator()
     {
-        $testEntity = FixturesCreator::createFixture('Modera\FoundationBundle\Tests\Fixtures\Bundle\Entity\TestEntity', 1, ['ignoredProperty']);
+        $testEntity = FixturesCreator::createFixture('LiSinCin\ModeraFoundationTestingTools\Tests\Fixtures\Bundle\Entity\TestEntity', 1, ['ignoredProperty']);
 
         $this->assertEquals('propertyOne1', $testEntity->getPropertyOne());
         $this->assertNull($testEntity->getPropertyWithOutSetter());

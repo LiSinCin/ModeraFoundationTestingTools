@@ -25,7 +25,7 @@ class AppKernel extends Kernel
      */
     public function getCacheDir()
     {
-        return sys_get_temp_dir().'/ModeraFoundationBundle/cache';
+        return sys_get_temp_dir().'/LiSinCinFoundationTestingTools/cache';
     }
 
     /**
@@ -33,6 +33,6 @@ class AppKernel extends Kernel
      */
     public function getLogDir()
     {
-        return sys_get_temp_dir().'/ModeraFoundationBundle/logs';
+        return sys_get_temp_dir().'/LiSinCinFoundationTestingTools/logs';
     }
 }

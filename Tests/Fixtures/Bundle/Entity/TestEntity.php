@@ -1,6 +1,6 @@
 <?php
 
-namespace Modera\FoundationBundle\Tests\Fixtures\Bundle\Entity;
+namespace LiSinCin\ModeraFoundationTestingTools\Tests\Fixtures\Bundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
