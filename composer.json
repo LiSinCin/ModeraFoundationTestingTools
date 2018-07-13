@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "modera/foundation-bundle": "~1.0|~2.0",
+        "modera/foundation-bundle": "~1.0|~2.0|~3.0",
         "doctrine/doctrine-bundle": "~1.2",
         "doctrine/orm": "~2.2"
     },
