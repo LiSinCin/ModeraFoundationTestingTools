@@ -331,11 +331,13 @@ class FunctionalTestCase extends WebTestCase
     protected static function clearTables(array $entitiesMetadata)
     {
         static::preClearTables();
+        static::$em->getConnection()->executeQuery('SET FOREIGN_KEY_CHECKS=0;');
         foreach ($entitiesMetadata as $entityMetadata) {
             /* var ClassMetadata $classMetaData */
             $query = static::$em->createQuery('DELETE FROM '.$entityMetadata->rootEntityName);
             $query->execute();
         }
+        static::$em->getConnection()->executeQuery('SET FOREIGN_KEY_CHECKS=1;');
     }
 
     /**
