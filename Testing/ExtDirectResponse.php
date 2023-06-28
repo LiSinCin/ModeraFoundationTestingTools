@@ -2,8 +2,6 @@
 
 namespace LiSinCin\ModeraFoundationTestingTools\Testing;
 
-use Symfony\Component\HttpFoundation\Response;
-
 /**
  * @author    Alex Plaksin <alex.plaksin@modera.net>
  * @copyright 2015 Modera Foundation

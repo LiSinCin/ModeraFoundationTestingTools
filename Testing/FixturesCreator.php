@@ -1,9 +1,6 @@
 <?php
 
 namespace LiSinCin\ModeraFoundationTestingTools\Testing;
-use Doctrine\Common\Annotations\DocParser;
-use Doctrine\Common\Util\Debug;
-use Symfony\Component\Debug\Exception\ContextErrorException;
 
 /**
  * Create fixture with all non relations field filled.

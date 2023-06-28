@@ -2,7 +2,7 @@
 
 namespace LiSinCin\ModeraFoundationTestingTools\Testing;
 
-use Modera\SecurityBundle\Entity\User;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @author    Alex Plaksin <alex.plaksin@modera.net>
@@ -47,11 +47,11 @@ trait ExtDirectClientTrait
     /**
      * Helper method for retrieving auth header used by firewall to authentifcate user against Direct routing.
      *
-     * @param User $user
+     * @param UserInterface $user
      *
      * @return array
      */
-    protected static function getDirectAuthHeaders(User $user, $password = '1234')
+    protected static function getDirectAuthHeaders(UserInterface $user, $password = '1234')
     {
         return array(
             'CONTENT_TYPE' => 'application/json',
