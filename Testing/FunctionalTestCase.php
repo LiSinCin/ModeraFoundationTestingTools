@@ -2,13 +2,12 @@
 
 namespace LiSinCin\ModeraFoundationTestingTools\Testing;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
-use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\Tools\SchemaTool;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Bundle\FrameworkBundle\Client;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Doctrine\Common\Util\Debug;
 
 /**
  * @author    Alex Plaksin <alex.plaksin@modera.net>
